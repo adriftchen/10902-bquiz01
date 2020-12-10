@@ -21,8 +21,8 @@ foreach($_POST['id'] as $key => $id){
             break;
             case "ad":
             case "mvim":
+            case "image":
                 $row['sh']=(in_array($id,$_POST['sh']))?1:0;
-
             break;
 
         }

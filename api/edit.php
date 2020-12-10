@@ -20,16 +20,14 @@ foreach($_POST['id'] as $key => $id){
                 $row['sh']=($id==$_POST['sh'])?1:0;
             break;
             case "ad":
-                $row['sh']=(in_array($id,$_POST['sh']))?1:0;
-            break;
             case "mvim":
+                $row['sh']=(in_array($id,$_POST['sh']))?1:0;
 
             break;
 
         }
 
-        
-        
+
         $row['text']=$_POST['text'][$key];
 
         $db->save($row);

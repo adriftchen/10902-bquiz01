@@ -1,6 +1,6 @@
 <?php
 include "../base.php";
-
+print_r($_POST);
 $table=$_POST['table'];
 $db=new DB($table);
 
@@ -24,11 +24,17 @@ foreach($_POST['id'] as $key => $id){
             case "image":
                 $row['sh']=(in_array($id,$_POST['sh']))?1:0;
             break;
+            case "total":
+                $row['total']=$_POST['total'];
+            break;
+
 
         }
 
+        if(!empty($_POST['text'])){
 
-        $row['text']=$_POST['text'][$key];
+            $row['text']=$_POST['text'][$key];
+        }
 
         $db->save($row);
 

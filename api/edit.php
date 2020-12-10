@@ -19,7 +19,7 @@ foreach($_POST['id'] as $key => $id){
         }
 
         switch($table){
-            case "tilte":
+            case "title":
                 $row['sh']=($id==$_POST['sh'])?1:0;
             break;
             case "total":

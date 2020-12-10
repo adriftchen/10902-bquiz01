@@ -13,7 +13,23 @@ foreach($_POST['id'] as $key => $id){
 
         $row=$db->find($id);
         
-        $row['sh']=($id==$_POST['sh'])?1:0;
+
+        switch($table){
+            case "tilte":
+
+                $row['sh']=($id==$_POST['sh'])?1:0;
+            break;
+            case "ad":
+                $row['sh']=(in_array($id,$_POST['sh']))?1:0;
+            break;
+            case "mvim":
+
+            break;
+
+        }
+
+        
+        
         $row['text']=$_POST['text'][$key];
 
         $db->save($row);

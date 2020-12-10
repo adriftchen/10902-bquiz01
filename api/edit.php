@@ -12,6 +12,7 @@ foreach($_POST['id'] as $key => $id){
     }else{
 
         $row=$db->find($id);
+        
         $row['sh']=($id==$_POST['sh'])?1:0;
         $row['text']=$_POST['text'][$key];
 

@@ -13,17 +13,14 @@ foreach($_POST['id'] as $key => $id){
 
         $row=$db->find($id);
         
+        if(!empty($_POST['text'])){
+
+            $row['text']=$_POST['text'][$key];
+        }
 
         switch($table){
             case "tilte":
-
                 $row['sh']=($id==$_POST['sh'])?1:0;
-            break;
-            case "ad":
-            case "mvim":
-            case "image":
-            case "news":
-                $row['sh']=(in_array($id,$_POST['sh']))?1:0;
             break;
             case "total":
                 $row['total']=$_POST['total'];
@@ -31,18 +28,32 @@ foreach($_POST['id'] as $key => $id){
             case "bottom":
                 $row['bottom']=$_POST['bottom'];
             break;
+            case "menu":
+                $row['sh']=(in_array($id,$_POST['sh']))?1:0;
+                $row['href']=$_POST['href'][$key];
+            break;
             case "admin":
                 $row['acc']=$_POST['acc'][$key];
                 $row['pw']=$_POST['pw'][$key];
             break;
-
+            default:
+            $row['sh']=(in_array($id,$_POST['sh']))?1:0;
 
         }
 
-        if(!empty($_POST['text'])){
-
-            $row['text']=$_POST['text'][$key];
-        }
+        /* 
+        case "total":
+            $row['total']=$_POST['total'];
+        break;
+        case "bottom":
+            $row['bottom']=$_POST['bottom'];
+        break; 
+        
+        可以改寫成
+        case "total":
+        case "bottom":    
+            $row['$table]=$_POST[$table];
+        break; */
 
         $db->save($row);
 

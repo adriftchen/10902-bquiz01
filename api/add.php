@@ -24,7 +24,8 @@ if(!empty($_POST['text'])){
             $data['pw']=$_POST['pw'];
         break;
         case "menu":
-
+            $data['href']=$_POST['href'];
+            $data['sh']=1;
         break;
         default:
          $data['sh']=1;

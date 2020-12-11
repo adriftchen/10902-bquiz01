@@ -55,7 +55,7 @@
 								2.讓圖片顯示在網頁上
 								3.設定圖片大小為150px x 103px
 							-->
-							<div class='cent' onclick="pp(1)">
+							<div class='cent' onclick="pp(1)" style="margin:5px 0">
 								<img src="icon/up.jpg" alt="">
 							</div>
 							<?php
@@ -63,7 +63,7 @@
 								$imgs=$Image->all(['sh'=>1]);
 
 								foreach($imgs as $key => $img){
-									echo "<div class='cent im' id='ssaa$key'><img src='img/{$img['img']}' style='width:150px;height:103px'></div>";
+									echo "<div class='cent im' id='ssaa$key'><img src='img/{$img['img']}' style='width:150px;height:103px;border:3px solid orange;margin:3px 0'></div>";
 								}
 
 							?>
@@ -77,7 +77,7 @@
 								var s,t;
 								if(x==1 && nowpage-1>=0)
 								{nowpage--;}
-								if(x==2&&(nowpage+1)*3<=num*1+3)
+								if(x==2&&(nowpage+1)<=num-3)
 								{nowpage++;}
 								$(".im").hide()
 								for(s=0;s<=2;s++)

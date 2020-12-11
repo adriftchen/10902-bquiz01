@@ -3,7 +3,15 @@
                     <div style="height:32px; display:block;"></div>
                                         <!--正中央-->
                                         <script>
-                    	var lin=new Array();
+
+							<?php
+								$str=[];
+								$mvims=$Mvim->all(['sh'=>1]);
+								foreach($mvims as $key => $mvim){
+									$str[]="'img/{$mvim['img']}'";
+								}
+							?>
+                    	var lin=[<?=implode(',',$str);?>];
 						var now=0;
 						if(lin.length>1)
 						{
@@ -12,6 +20,7 @@
 						}
 						function ww()
 						{
+							
 							$("#mwww").html("<embed loop=true src='"+lin[now]+"' style='width:99%; height:100%;'></embed>")
 							//$("#mwww").attr("src",lin[now])
 							now++;
@@ -21,8 +30,9 @@
                     </script>
                 	<div style="width:100%; padding:2px; height:290px;">
                     	<div id="mwww" loop="true" style="width:100%; height:100%;">
-                        	                                <div style="width:99%; height:100%; position:relative;" class="cent">沒有資料</div>
-                                                        </div>
+							<div style="width:99%; height:100%; position:relative;" class="cent">沒有資料</div>
+
+                        </div>
                     </div>
                 	<div style="width:95%; padding:2px; height:190px; margin-top:10px; padding:5px 10px 5px 10px; border:#0C3 dashed 3px; position:relative;">
                     		<span class="t botli">最新消息區
@@ -53,7 +63,7 @@
 							function ()
 							{
 								$("#alt").html(""+$(this).children(".all").html()+"").css({"top":$(this).offset().top-50})
-								$("#alt").show()
+									$("#alt").show()
 							}
 						)
 						$(".sswww").mouseout(

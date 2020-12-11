@@ -142,7 +142,7 @@ class DB{
         return $this->pdo->query($sql)->fetchAll();
     }
 
-
+    
 }
 
 function to($url){

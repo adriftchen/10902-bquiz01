@@ -21,7 +21,7 @@
                 <tr>
                     <td ><input type="text" name="text[]" value="<?=$row['text'];?>" style="width:95%"></td>
                     <td ><input type="text" name="href[]" value="<?=$row['href'];?>" style="width:95%"></td>
-                    <td ></td>
+                    <td ><?=$Menu->count(['parent'=>$row['id']]);?></td>
                     <td ><input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>></td>
                     <td ><input type="checkbox" name="del[]" value="<?=$row['id'];?>"></td>
 

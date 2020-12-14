@@ -16,6 +16,8 @@ foreach($_POST['id'] as $key => $id){
     }
 }
 
+
+
 if(isset($_POST['text2'])){
     foreach($_POST['text2'] as $key => $text){
         if(!empty($text)){
@@ -29,9 +31,7 @@ if(isset($_POST['text2'])){
             $Menu->save($add);
         }
     }
-
-
-
+ 
 }
 
 

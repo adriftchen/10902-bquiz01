@@ -34,7 +34,7 @@
 						
 							<div class="mainmu">
 								<a style="color:#000; font-size:13px; text-decoration:none;" href="<?=$main['href'];?>"><?=$main['text'];?></a>
-								<div class="mw">
+								<div class="mw" style="display:none;position:relative;top:-5px;z-index:98;width:150px;margin-left:100px">
 								<?php 
 
 									if($Menu->count(['parent'=>$main['id']])>0){

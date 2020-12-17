@@ -6,9 +6,8 @@
             <tbody>
                 <tr class="yel">
 
-                    <td width="30%">主選單名稱</td>
-                    <td width="30%">選單連結網址</td>
-                    <td width="10%">次選單數</td>
+                    <td width="30%">技能名稱</td>
+                    <td width="30%">技能說</td>
                     <td width="10%">顯示</td>
                     <td width="10%">刪除</td>
                     <td></td>
@@ -21,7 +20,7 @@
                 <tr>
                     <td ><input type="text" name="text[]" value="<?=$row['text'];?>" style="width:95%"></td>
                     <td ><input type="text" name="href[]" value="<?=$row['href'];?>" style="width:95%"></td>
-                    <td ><?=$Menu->count(['parent'=>$row['id']]);?></td>
+
                     <td ><input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>></td>
                     <td ><input type="checkbox" name="del[]" value="<?=$row['id'];?>"></td>
 
